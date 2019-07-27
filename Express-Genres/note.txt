@@ -1,0 +1,33 @@
+object Destructor
+Template function
+json Middleware
+
+//GET
+
+
+//POST
+
+  const genre1 = {
+    id: req.params.id,
+    name: req.body.name
+  };
+  genres.push(genre1);
+  res.send(genre1);
+
+//PUT
+genre.name=req.body.name;
+
+//DELETE
+const index=genres.indexOf(genre);
+genres.splice(index,1);
+
+//joi
+ const schema = {
+    name: Joi.string()
+      .min(3)
+      .required()
+  };
+
+  const result = Joi.validate(req.body, schema);
+   if (result.error)
+  return res.status(400).send(result.error.details[0].message);
